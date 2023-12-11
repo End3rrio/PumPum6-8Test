@@ -15,7 +15,7 @@ services:
   task:
     build:
       context: .
-      dockerfile: /task-service/Dockerfile
+      dockerfile: /app/task-creation-service/Dockerfile
     ports:
       - "80:80"
     depends_on:
