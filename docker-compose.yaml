@@ -12,6 +12,15 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  task:
+    build:
+      context: .
+      dockerfile: /task-service/Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - postgres
+
 
   pgadmin:
     container_name: pgadmin
