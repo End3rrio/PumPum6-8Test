@@ -16,7 +16,7 @@ class TaskCreationService():
     def get_random_task(self) -> Task:
         return self.task_creation_repo.get_task_by_id(uuid.uuid4())
 
-    def get_n_random_task(self, n: int) -> list[Task]:
+    def get_n_random_task(self, n: int = 10) -> list[Task]:
         tasks = self.task_creation_repo.get_tasks()
         return [task for task in tasks[:n]]
 

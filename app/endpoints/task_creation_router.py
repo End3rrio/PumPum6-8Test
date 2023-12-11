@@ -8,8 +8,8 @@ task_creation_router = APIRouter(prefix='/task-creation', tags=['Task'])
 
 
 @task_creation_router.get('/get-random-task')
-def get_tasks(task_creation_service: TaskCreationService = Depends(TaskCreationService)) -> Task:
-    return task_creation_service.get_random_task()
+def get_tasks(task_creation_service: TaskCreationService = Depends(TaskCreationService)) -> list[Task]:
+    return task_creation_service.get_n_random_task()
 
 
 @task_creation_router.post('/get-task-by-id')
